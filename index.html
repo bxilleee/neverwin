@@ -1,59 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Your Brand</title>
+  <meta charset="UTF-8">
+  <title>YourBrand</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- NAV -->
-  <nav>
-    <h2 class="logo">YourBrand</h2>
-    <a href="#products" class="nav-btn">Buy Now</a>
-  </nav>
+<canvas id="snow"></canvas>
 
-  <!-- HERO -->
-  <section class="hero">
-    <h1>Premium Digital Products</h1>
-    <p>Instant delivery. Secure. High quality.</p>
-    <a href="#products" class="cta">View Products</a>
-  </section>
+<nav>
+  <h2 class="logo">YourBrand</h2>
+  <button class="cart-btn" onclick="toggleCart()">🛒 <span id="cartCount">0</span></button>
+</nav>
 
-  <!-- PRODUCTS -->
-  <section id="products" class="products">
-    <h2>Our Products</h2>
+<section class="hero">
+  <h1 class="title">Premium Digital Products</h1>
+  <p class="subtitle">Instant delivery • Secure checkout</p>
+</section>
 
-    <div class="cards">
-      <div class="card">
-        <h3>Product One</h3>
-        <p>High-quality digital product.</p>
-        <span>$9.99</span>
-        <button>Purchase</button>
-      </div>
+<section class="products">
+  <div class="product" data-name="Starter Pack" data-price="9.99">
+    <h3>Starter Pack</h3>
+    <p>Perfect for beginners</p>
+    <span>$9.99</span>
+    <button onclick="addToCart(this)">Add to Cart</button>
+  </div>
 
-      <div class="card featured">
-        <h3>Product Two</h3>
-        <p>Most popular choice.</p>
-        <span>$19.99</span>
-        <button>Purchase</button>
-      </div>
+  <div class="product featured" data-name="Pro Pack" data-price="19.99">
+    <h3>Pro Pack</h3>
+    <p>Most popular</p>
+    <span>$19.99</span>
+    <button onclick="addToCart(this)">Add to Cart</button>
+  </div>
 
-      <div class="card">
-        <h3>Product Three</h3>
-        <p>Advanced features included.</p>
-        <span>$29.99</span>
-        <button>Purchase</button>
-      </div>
-    </div>
-  </section>
+  <div class="product" data-name="Ultimate Pack" data-price="29.99">
+    <h3>Ultimate Pack</h3>
+    <p>All features unlocked</p>
+    <span>$29.99</span>
+    <button onclick="addToCart(this)">Add to Cart</button>
+  </div>
+</section>
 
-  <!-- FOOTER -->
-  <footer>
-    <p>© 2026 YourBrand. All rights reserved.</p>
-  </footer>
+<!-- CART -->
+<div class="cart" id="cart">
+  <h3>Your Cart</h3>
+  <div id="cartItems"></div>
+  <p class="total">Total: $<span id="total">0.00</span></p>
+  <button class="checkout">Checkout</button>
+</div>
 
-  <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
